@@ -1,0 +1,37 @@
+{
+  "name": "babel-plugin-glsl",
+  "description": "Process GLSL code with glslify",
+  "version": "0.0.1-alpha.1",
+  "author": "Onno Visser <visser.onno@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/onnovisser/babel-plugin-glsl/issues"
+  },
+  "dependencies": {
+    "glsl-inject-defines": "^1.0.1",
+    "glsl-token-defines": "^1.0.0",
+    "glsl-token-depth": "^1.1.1",
+    "glsl-token-descope": "^1.0.2",
+    "glsl-token-scope": "^1.1.1",
+    "glsl-token-string": "^1.0.1",
+    "glsl-token-whitespace-trim": "^1.0.0",
+    "glsl-tokenizer": "^2.0.2",
+    "glslify-bundle": "^5.0.0",
+    "glslify-deps": "^1.2.5",
+    "murmurhash-js": "^1.0.0",
+    "shallow-copy": "0.0.1",
+    "resolve": "^1.1.5"
+  },
+  "devDependencies": {},
+  "homepage": "https://github.com/onnovisser/babel-plugin-glsl#readme",
+  "keywords": [
+    "babel",
+    "babel-plugin",
+    "glslify",
+    "glsl",
+    "webgl",
+    "shader"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": "https://github.com/onnovisser/babel-plugin-glsl"
+}

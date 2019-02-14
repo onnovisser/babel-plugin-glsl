@@ -1,0 +1,14 @@
+# Dependency managers
+node_modules/
+yarn.lock
+
+# Logs
+*.log
+
+# Editor specific
+.idea/
+.vscode/
+
+# General files
+*~
+.DS_STORE
