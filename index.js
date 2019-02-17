@@ -1,5 +1,5 @@
 const { dirname } = require('path');
-const { evalConstant } = require('./lib/utils');
+const { evalConstant, resolveModule } = require('./lib/utils');
 const compile = require('./lib/compile');
 
 module.exports = function(babel) {
@@ -10,7 +10,10 @@ module.exports = function(babel) {
     visitor: {
       TaggedTemplateExpression: function(path, state) {
         const { quasi, tag } = path.node;
-        if (tag.type !== 'Identifier' || tag.name !== 'glsl') {
+        if (
+          tag.type !== 'Identifier' ||
+          resolveModule(path, tag.name) !== 'glslify'
+        ) {
           return;
         }
 
@@ -28,6 +31,18 @@ module.exports = function(babel) {
 
         const result = compile(stringInput, { basedir: cwd });
         path.replaceWith(t.stringLiteral(result));
+      },
+      Program: {
+        exit(programPath) {
+          programPath.traverse({
+            ImportDeclaration(path) {
+              if (path.node.source.value === 'glslify') {
+                path.remove();
+              }
+            },
+            // TODO: remove requires
+          });
+        },
       },
     },
   };

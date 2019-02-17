@@ -6,6 +6,8 @@ A [Babel](https://babeljs.io/) plugin to process GLSL code with [glslify](https:
 
 ### In
 ```js
+import glsl from 'glslify';
+
 const fragmentShader = glsl`
   #pragma glslify: random = require(glsl-random)
 
@@ -41,10 +43,10 @@ const fragmentShader = `
 
 ```bash
 # yarn
-yarn add -D babel-plugin-glsl
+yarn add -D glslify babel-plugin-glsl
 
 # npm
-npm i --save-dev babel-plugin-glsl
+npm i --save-dev glslify babel-plugin-glsl
 ```
 
 
