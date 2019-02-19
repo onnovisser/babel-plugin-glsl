@@ -1,15 +1,12 @@
-const { dirname } = require('path');
-const { evalConstant, resolveModule } = require('./lib/utils');
-const compile = require('./lib/compile');
+const { resolveModule } = require('./lib/utils');
+const processGlslTag = require('./lib/processGlslTag');
 
 module.exports = function(babel) {
-  const { types: t } = babel;
-
   return {
     name: 'glslify',
     visitor: {
-      TaggedTemplateExpression: function(path, state) {
-        const { quasi, tag } = path.node;
+      TaggedTemplateExpression(path, state) {
+        const { tag } = path.node;
         if (
           tag.type !== 'Identifier' ||
           resolveModule(path, tag.name) !== 'glslify'
@@ -17,20 +14,11 @@ module.exports = function(babel) {
           return;
         }
 
-        const cwd = dirname(state.filename);
-        const env = {
-          cwd,
-        };
-
-        const stringInput = evalConstant(env, path, quasi);
-        if (typeof stringInput !== 'string') {
-          throw new Error(
-            'glslify-babel: string template could not be evaluated'
-          );
+        try {
+          processGlslTag(path, state, babel);
+        } catch (e) {
+          throw path.buildCodeFrameError(e.message);
         }
-
-        const result = compile(stringInput, { basedir: cwd });
-        path.replaceWith(t.stringLiteral(result));
       },
       Program: {
         exit(programPath) {
