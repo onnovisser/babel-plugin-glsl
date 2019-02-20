@@ -7,6 +7,7 @@
     "url": "https://github.com/onnovisser/babel-plugin-glsl/issues"
   },
   "dependencies": {
+    "babel-plugin-macros": "^2.5.0",
     "glsl-inject-defines": "^1.0.1",
     "glsl-token-defines": "^1.0.0",
     "glsl-token-depth": "^1.1.1",
@@ -18,8 +19,8 @@
     "glslify-bundle": "^5.0.0",
     "glslify-deps": "^1.2.5",
     "murmurhash-js": "^1.0.0",
-    "shallow-copy": "0.0.1",
-    "resolve": "^1.1.5"
+    "resolve": "^1.1.5",
+    "shallow-copy": "0.0.1"
   },
   "devDependencies": {},
   "files": [
@@ -33,7 +34,8 @@
     "glslify",
     "glsl",
     "webgl",
-    "shader"
+    "shader",
+    "babel-plugin-macros"
   ],
   "license": "MIT",
   "main": "index.js",
