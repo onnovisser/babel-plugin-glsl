@@ -52,10 +52,19 @@ npm i --save-dev glslify babel-plugin-glsl
 
 ## Usage
 
-.babelrc
+Add the plugin to your `.babelrc`
 ```json
 {
   "plugins": ["babel-plugin-glsl"],
 }
 ```
 
+Or use it directly with [babel-plugin-macros](https://github.com/kentcdodds/babel-plugin-macros/)
+
+```js
+import glsl from 'babel-plugin-glsl/macro';
+
+const fragmentShader = glsl`
+  // ...
+`;
+```
