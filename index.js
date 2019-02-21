@@ -1,4 +1,4 @@
-const { resolveModule } = require('./lib/utils');
+const resolveModule = require('./lib/resolveModule');
 const processGlslTag = require('./lib/processGlslTag');
 
 module.exports = function(babel) {
