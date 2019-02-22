@@ -1,7 +1,7 @@
 const resolveModule = require('./lib/resolveModule');
 const processGlslTag = require('./lib/processGlslTag');
 
-module.exports = function(babel) {
+function transform() {
   return {
     name: 'glslify',
     visitor: {
@@ -15,7 +15,7 @@ module.exports = function(babel) {
         }
 
         try {
-          processGlslTag(path, state, babel);
+          processGlslTag(path, state);
         } catch (e) {
           throw path.buildCodeFrameError(e.message);
         }
@@ -34,4 +34,6 @@ module.exports = function(babel) {
       },
     },
   };
-};
+}
+
+module.exports = transform;

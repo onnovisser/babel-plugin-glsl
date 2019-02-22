@@ -1,14 +1,14 @@
 const { createMacro, MacroError } = require('babel-plugin-macros');
 const processGlslTag = require('./lib/processGlslTag');
 
-function glslifyMacro({ references, state, babel }) {
+function glslifyMacro({ references, state }) {
   const { default: defaultImport = [] } = references;
 
   defaultImport.forEach(referencePath => {
     const path = referencePath.parentPath;
     if (path.type === 'TaggedTemplateExpression') {
       try {
-        processGlslTag(path, state, babel);
+        processGlslTag(path, state);
       } catch(e) {
         throw new MacroError(e.message);
       }

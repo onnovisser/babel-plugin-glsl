@@ -22,7 +22,9 @@
     "resolve": "^1.1.5",
     "shallow-copy": "0.0.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.3.3"
+  },
   "files": [
     "index.js",
     "lib"
