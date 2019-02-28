@@ -5,6 +5,7 @@
   "author": "Onno Visser <visser.onno@gmail.com>",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint *.js --fix",
     "format": "prettier \"**/*.{js,md} \" --write"
   },
   "dependencies": {
@@ -25,6 +26,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.3.3",
+    "eslint": "^5.14.1",
     "prettier": "^1.16.4"
   },
   "files": [
