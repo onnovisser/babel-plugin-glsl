@@ -3,8 +3,9 @@
   "description": "Process GLSL code with glslify",
   "version": "0.1.0",
   "author": "Onno Visser <visser.onno@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/onnovisser/babel-plugin-glsl/issues"
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier \"**/*.{js,md} \" --write"
   },
   "dependencies": {
     "babel-plugin-macros": "^2.5.0",
@@ -23,14 +24,14 @@
     "shallow-copy": "0.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.3.3"
+    "@babel/core": "^7.3.3",
+    "prettier": "^1.16.4"
   },
   "files": [
     "index.js",
     "macro.js",
     "lib"
   ],
-  "homepage": "https://github.com/onnovisser/babel-plugin-glsl#readme",
   "keywords": [
     "babel",
     "babel-plugin",
@@ -41,6 +42,9 @@
     "babel-plugin-macros"
   ],
   "license": "MIT",
-  "main": "index.js",
-  "repository": "https://github.com/onnovisser/babel-plugin-glsl"
+  "homepage": "https://github.com/onnovisser/babel-plugin-glsl#readme",
+  "repository": "https://github.com/onnovisser/babel-plugin-glsl",
+  "bugs": {
+    "url": "https://github.com/onnovisser/babel-plugin-glsl/issues"
+  }
 }

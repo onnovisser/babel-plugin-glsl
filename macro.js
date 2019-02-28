@@ -9,7 +9,7 @@ function glslifyMacro({ references, state }) {
     if (path.type === 'TaggedTemplateExpression') {
       try {
         processGlslTag(path, state);
-      } catch(e) {
+      } catch (e) {
         throw new MacroError(e.message);
       }
     } else {

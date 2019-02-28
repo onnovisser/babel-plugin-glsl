@@ -5,6 +5,7 @@ A [Babel](https://babeljs.io/) plugin to process GLSL code with [glslify](https:
 ## Example
 
 ### In
+
 ```js
 import glsl from 'glslify';
 
@@ -17,6 +18,7 @@ const fragmentShader = glsl`
   }
 `;
 ```
+
 ### Out
 
 ```js
@@ -49,13 +51,13 @@ yarn add -D glslify babel-plugin-glsl
 npm i --save-dev glslify babel-plugin-glsl
 ```
 
-
 ## Usage
 
 Add the plugin to your `.babelrc`
+
 ```json
 {
-  "plugins": ["babel-plugin-glsl"],
+  "plugins": ["babel-plugin-glsl"]
 }
 ```
 
