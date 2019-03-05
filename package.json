@@ -7,6 +7,8 @@
   "scripts": {
     "lint": "eslint *.js --fix",
     "format": "prettier \"**/*.{js,md} \" --write"
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "babel-plugin-macros": "^2.5.0",
@@ -25,7 +27,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.3.3",
+    "babel-plugin-tester": "^6.0.0",
     "eslint": "^5.14.1",
+    "jest": "^24.1.0",
     "prettier": "^1.16.4"
   },
   "files": [

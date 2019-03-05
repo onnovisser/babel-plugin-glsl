@@ -1,0 +1,1 @@
+"\n  vec3 rgb(int r, int g, int b) {\n  return vec3(float(r) / 255.0, float(g) / 255.0, float(b) / 255.0);\n}\n\n  void main () {\n    gl_FragColor = vec4(rgb(255, 0, 0), 1);\n  }\n";
