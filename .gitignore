@@ -12,3 +12,6 @@ yarn.lock
 # General files
 *~
 .DS_STORE
+
+# Generated
+coverage
