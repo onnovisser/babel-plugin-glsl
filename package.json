@@ -5,8 +5,8 @@
   "author": "Onno Visser <visser.onno@gmail.com>",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint *.js --fix",
-    "format": "prettier \"**/*.{js,md} \" --write"
+    "lint": "eslint \"**/*.js\" --fix",
+    "format": "prettier \"**/*.{js,md}\" --write",
     "test": "jest --coverage",
     "test:watch": "jest --watch"
   },
