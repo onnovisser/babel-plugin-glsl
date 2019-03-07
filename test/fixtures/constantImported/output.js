@@ -1,0 +1,2 @@
+import constants, { PI } from './constants';
+"\n  uniform float time;\n  void main () {\n    float brightness = pow(2.718281828459045, -sin(time * 3.141592653589793));\n    gl_FragColor = vec4(vec3(brightness), 1);\n  }\n";
