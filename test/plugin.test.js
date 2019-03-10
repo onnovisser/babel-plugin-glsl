@@ -20,19 +20,6 @@ pluginTester({
     {
       code: `
         import glsl from 'glslify';
-
-        let alpha = 1;
-        alpha = .5
-
-        glsl\`
-        #define ALPHA \${alpha}
-        \`;
-      `,
-      error: /not constant/,
-    },
-    {
-      code: `
-        import glsl from 'glslify';
         import { FOO } from './fixtures/constantImported/constants';
 
         glsl\`
