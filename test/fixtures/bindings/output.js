@@ -1,0 +1,1 @@
+"\n  uniform sampler2D uTexture;\n  uniform vec2 uCenter;\n  vec4 texture(vec2 p) {\n  return texture2D(uTexture, p - uCenter);\n}\n\n  void main () {\n    gl_FragColor = texture(gl_FragCoord);\n  }\n";
