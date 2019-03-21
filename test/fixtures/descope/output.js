@@ -1,0 +1,1 @@
+"\n  float rand_3865593738() {\n  return 0.55;\n}\n\nfloat rand_1836024111() {\n  return 0.87;\n}\n\nvec3 randomColor() {\n  return vec3(rand_1836024111(), rand_3865593738(), rand_1836024111());\n}\n\n  float rand() {\n    return 0.42;\n  }\n\n  void main () {\n    gl_FragColor = vec4(randomColor(), 1);\n  }\n";
