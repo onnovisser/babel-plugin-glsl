@@ -129,7 +129,7 @@ Shader transforms like [glslify-hex](http://stack.gl/packages/#hughsk/glslify-he
 
 ### In
 
-Install the transforms and them to your package.json
+Install the transforms and add them to your package.json
 
 ```json
 // package.json
