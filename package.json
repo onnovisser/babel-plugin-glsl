@@ -1,7 +1,7 @@
 {
   "name": "babel-plugin-glsl",
   "description": "Process GLSL code with glslify",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Onno Visser <visser.onno@gmail.com>",
   "main": "index.js",
   "scripts": {
