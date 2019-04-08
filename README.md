@@ -60,7 +60,7 @@ Add the plugin to your `.babelrc`
 
 ```json
 {
-  "plugins": ["babel-plugin-glsl"]
+  "plugins": ["glsl"]
 }
 ```
 
@@ -207,7 +207,7 @@ const shader = {
 
 > `random_0` doesn't match `random`
 
-This plugin does rename some functions to avoid clashed (like functions referenced inside of imports), but not ones that you import.
+This plugin does rename some functions to avoid clashes (like functions referenced inside of imports), but not ones that you import.
 
 # Inspiration
 
