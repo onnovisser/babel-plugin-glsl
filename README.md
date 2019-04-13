@@ -99,7 +99,7 @@ const frag = glsl`
 ```js
 const ALPHA = 1;
 
-const frag = glsl`
+const frag = `
   void main () {
     gl_FragColor = vec4(1, 0, 0, 1);
   }
@@ -110,11 +110,24 @@ const frag = glsl`
 
 Expressions that can't be inlined remain and the surrounding code is processed by Glslify in parts. This imposes the limitation that the parts on either side of the expression should be valid GLSL or compilation is likely to fail. It's probably best to place dynamic expressions as a `#define` and use that in the rest of the shader. 
 
-### In and out
+### In
 
 ```js
 function createShader(alpha)
   return glsl`
+    #define ALPHA ${alpha}
+    void main () {
+      gl_FragColor = vec4(1, 0, 0, ALPHA);
+    }
+  `;
+}
+```
+
+### Out
+
+```js
+function createShader(alpha)
+  return `
     #define ALPHA ${alpha}
     void main () {
       gl_FragColor = vec4(1, 0, 0, ALPHA);
@@ -158,7 +171,7 @@ const frag = glsl`
 ### Out 
 
 ```js
-const frag = glsl`
+const frag = `
   #define PI 3.141592653589793
   void main () {
     gl_FragColor = vec4(vec3(1,0,0), 1);
@@ -168,9 +181,9 @@ const frag = glsl`
 
 ## Imported function names
 
-Glslify changes function names to avoid clashes. This is an issue if you write your shader in multiple parts.
+This plugin doesn't rename the functions that you import, which is something that Glslify normally does to avoid clashes when you import multiple functions with the same name. This is an issue if you write your shader in multiple parts.
 
-### Example of the problem
+This:
 
 ```js
 const shader = {
@@ -188,7 +201,7 @@ turns into
 
 ```js
 const shader = {
-  fragPars: glsl`
+  fragPars: `
     highp float random_0(vec2 co) {
       highp float a = 12.9898;
       highp float b = 78.233;
@@ -198,7 +211,7 @@ const shader = {
       return fract(sin(sn) * c);
     }
   `,
-  fragMain: glsl`
+  fragMain: `
     float brightness = random(gl_FragCoord.xy / resolution.xy);
     gl_FragColor = vec4(vec3(brightness), 1.0);
   `
