@@ -2,7 +2,6 @@ babel-plugin-glsl
 ====================
 
 [![npm version](https://badge.fury.io/js/babel-plugin-glsl.svg)](https://badge.fury.io/js/babel-plugin-glsl)
-[![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
 [![Babel Macro](https://img.shields.io/badge/babel--macro-%F0%9F%8E%A3-f5da55.svg?style=flat-square)](https://github.com/kentcdodds/babel-plugin-macros)
 
 A [Babel](https://babeljs.io/) plugin to process GLSL code with [glslify](https://github.com/glslify/glslify), a module system for GLSL.
