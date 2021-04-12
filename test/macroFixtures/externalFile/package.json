@@ -1,0 +1,8 @@
+{
+  "glslify": {
+    "transform": [
+      "glslify-hex",
+      "glslify-import"
+    ]
+  }
+}
